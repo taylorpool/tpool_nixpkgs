@@ -8,7 +8,7 @@ stdenv.mkDerivation {
     cmake
   ];
   cmakeFlags = [
-    "-DCMAKE_BUILD_TYPE=Release -DGTSAM_USE_SYSTEM_EIGEN=ON -DGTSAM_WITH_TBB=ON -DGTSAM_USE_SYSTEM_METIS=ON -G Ninja"
+    "-DCMAKE_BUILD_TYPE=Release -DGTSAM_USE_SYSTEM_EIGEN=ON -DGTSAM_WITH_TBB=ON -DGTSAM_USE_SYSTEM_METIS=ON"
   ];
   propagatedBuildInputs = [
     eigen
@@ -17,7 +17,6 @@ stdenv.mkDerivation {
     metis
   ];
   doCheck = true;
-  checkTarget = "check";
 
   meta = with lib; {
     description = "Factor Graphs for Sensor Fusion in Robotics";
