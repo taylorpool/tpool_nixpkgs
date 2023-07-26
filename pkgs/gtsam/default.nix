@@ -1,4 +1,4 @@
-{ lib, stdenv, boost, cmake, eigen, ninja, tbb, metis }:
+{ lib, stdenv, boost, cmake, eigen, tbb, metis }:
 stdenv.mkDerivation {
   pname = "gtsam";
   version = "4.1.1";
@@ -6,7 +6,6 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [
     cmake
-    ninja
   ];
   cmakeFlags = [
     "-DCMAKE_BUILD_TYPE=Release -DGTSAM_USE_SYSTEM_EIGEN=ON -DGTSAM_WITH_TBB=ON -DGTSAM_USE_SYSTEM_METIS=ON -G Ninja"
@@ -17,7 +16,8 @@ stdenv.mkDerivation {
     tbb
     metis
   ];
-  doCheck = false;
+  doCheck = true;
+  checkTarget = "check";
 
   meta = with lib; {
     description = "Factor Graphs for Sensor Fusion in Robotics";
