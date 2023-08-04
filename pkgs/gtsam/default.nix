@@ -17,6 +17,7 @@ stdenv.mkDerivation {
     tbb
     metis
   ];
+  patches = [ ./patch.txt ];
   doCheck = runTests;
 
   meta = with lib; {
