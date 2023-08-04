@@ -1,0 +1,21 @@
+diff -Naur pure_source/CMakeLists.txt changed_source/CMakeLists.txt
+--- pure_source/CMakeLists.txt	1969-12-31 19:00:00.000000000 -0500
++++ changed_source/CMakeLists.txt	2023-08-01 18:28:51.982083487 -0400
+@@ -0,0 +1,17 @@
++cmake_minimum_required(VERSION 3.23)
++
++project(mcap)
++
++find_package(LZ4 REQUIRED)
++find_package(zstd REQUIRED)
++
++add_library(mcap INTERFACE)
++target_include_directories(mcap
++  PUBLIC
++  "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/cpp/include>"
++  "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
++)
++target_link_libraries(mcap
++  LZ4::LZ4
++  zstd::zstd
++)
