@@ -1,8 +1,8 @@
 { lib, stdenv, boost, cmake, eigen, tbb, metis, gtest, runTests ? false }:
 stdenv.mkDerivation {
   pname = "gtsam";
-  version = "4.1.1";
-  src = builtins.fetchTarball "https://github.com/borglab/gtsam/archive/refs/tags/4.1.1.tar.gz";
+  version = "4.2";
+  src = builtins.fetchTarball "https://github.com/borglab/gtsam/archive/refs/tags/4.2.tar.gz";
 
   nativeBuildInputs = [
     cmake
