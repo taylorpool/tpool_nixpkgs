@@ -4,5 +4,5 @@ self: super:
   lz4cmake = super.callPackage ./pkgs/lz4 {};
   mcap = super.callPackage ./pkgs/mcap { lz4=self.lz4cmake; };
   velodyne_decoder = import ./pkgs/velodyne_decoder { pkgs=super; };
-  clang17 = import ./pkgs/clang17 { pkgs=super; };
+  clang17 = super.callPackage ./pkgs/clang17 {};
 }
