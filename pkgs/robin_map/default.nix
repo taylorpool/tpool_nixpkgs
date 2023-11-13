@@ -9,6 +9,11 @@ stdenv.mkDerivation {
 		rev = "5eace6f74c9edff8e264c2d26a85365ad9ea149c";
 	};
 
+	nativeBuildInputs = [
+		cmake
+		ninja
+	];
+
 	meta = with lib; {
 		description = "";
 	};
