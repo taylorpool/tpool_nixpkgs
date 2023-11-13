@@ -10,6 +10,6 @@ stdenv.mkDerivation {
 	};
 
 	meta = with lib; {
-		description = ""
+		description = "";
 	};
 }
