@@ -1,6 +1,6 @@
 {pkgs}:
 ( import ( builtins.fetchGit {
   url = "git@bitbucket.org-cmu:tpool23/velodyne_decoder.git";
-  rev = "c37ae9cc860bcfcdc61f8dccd935f27a7c7c7374";
+  rev = "211009d4fe863a9e35373807f1d523a1f0aac199";
   ref = "master";
 } ) { pkgs=pkgs; } )
