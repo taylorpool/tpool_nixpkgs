@@ -8,5 +8,7 @@ self: super:
 
   mcap = super.callPackage ./pkgs/mcap { lz4=self.lz4cmake; };
 
+  pcl_types = import ./pkgs/pcl_types { pkgs=super; };
+
   velodyne_decoder = import ./pkgs/velodyne_decoder { pkgs=super; };
 }
